@@ -50,6 +50,7 @@ Bundle 'vim-scripts/matchit.zip'
 Bundle 'mattn/emmet-vim'
 Bundle 'bling/vim-airline'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'craigemery/vim-autotag'
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
