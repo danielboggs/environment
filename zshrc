@@ -25,6 +25,9 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export RBENV_ROOT="/usr/local/var/rbenv"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# set vim as the default editor
+export EDITOR=vim
+
 # Print your public IPv4 address
 function publicip () {
   curl -s http://whatismyip.akamai.com/;
