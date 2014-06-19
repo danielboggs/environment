@@ -25,7 +25,6 @@ This repo was originally forked from [https://github.com/square/maximum-awesome]
 
 ### tmux
 
-* `<C-b>` is the prefix
 * mouse scroll initiates tmux scroll
 * `prefix v` makes a vertical split
 * `prefix s` makes a horizontal split
@@ -40,15 +39,9 @@ You can adjust the size of the smaller panes in `tmux.conf` by lowering or incre
 
     rake
 
-## Additions
+*Note: Some of the `.zshrc` config expects you to have oh-my-zsh installed. So either install it, or remove the oh-my-zsh specific configurations from the zshrc file.*
 
-I have also included some dotfiles of my own:
-
-```
-.gemrc
-.gvimrc
-.zshrc
-```
+## Additional Notes
 
 There is a set of base16 compatible Iterm2 colorschemes in the `iterm2-colors` directory.
 
