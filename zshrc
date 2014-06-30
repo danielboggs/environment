@@ -60,3 +60,6 @@ function extract () {
     echo "'$1' is not a valid file"
   fi
 }
+
+alias :q="exit"
+alias :bd="exit"
