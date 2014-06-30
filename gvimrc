@@ -1,4 +1,4 @@
-colorscheme base16-ocean
+colorscheme base16-eighties
 
 set background=dark
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
