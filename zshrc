@@ -63,3 +63,4 @@ function extract () {
 
 alias :q="exit"
 alias :bd="exit"
+alias base="tmux attach -t base || tmux new -s base"
