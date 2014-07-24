@@ -138,7 +138,7 @@ call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "")
 call <sid>hi("MatchParen",    s:gui00, s:gui03, s:cterm00, s:cterm03,  "")
 call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "")
 call <sid>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "")
-call <sid>hi("Question",      s:gui0A, "", s:cterm0A, "", "")
+call <sid>hi("Question",      s:gui09, "", s:cterm09, "", "")
 call <sid>hi("Search",        s:gui03, s:gui0A, s:cterm03, s:cterm0A,  "")
 call <sid>hi("SpecialKey",    s:gui03, "", s:cterm03, "", "")
 call <sid>hi("TooLong",       s:gui08, "", s:cterm08, "", "")
@@ -251,8 +251,13 @@ call <sid>hi("javaScript",        s:gui05, "", s:cterm05, "", "")
 call <sid>hi("javaScriptBraces",  s:gui05, "", s:cterm05, "", "")
 call <sid>hi("javaScriptNumber",  s:gui09, "", s:cterm09, "", "")
 
+" Python highlighting
+call <sid>hi("pythonOperator",  s:gui0E, "", s:cterm0E, "", "")
+call <sid>hi("pythonRepeat",    s:gui0E, "", s:cterm0E, "", "")
+
 " Markdown highlighting
 call <sid>hi("markdownCode",              s:gui0B, "", s:cterm0B, "", "")
+call <sid>hi("markdownError",             s:gui05, s:gui00, s:cterm05, s:cterm00, "")
 call <sid>hi("markdownCodeBlock",         s:gui0B, "", s:cterm0B, "", "")
 call <sid>hi("markdownHeadingDelimiter",  s:gui0D, "", s:cterm0D, "", "")
 

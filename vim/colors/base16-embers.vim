@@ -1,23 +1,23 @@
-" Base16 Isotope (https://github.com/chriskempson/base16)
-" Scheme: Jan T. Sott
+" Base16 Embers (https://github.com/chriskempson/base16)
+" Scheme: Jannik Siebert (https://github.com/janniks)
 
 " GUI color definitions
-let s:gui00 = "000000"
-let s:gui01 = "404040"
-let s:gui02 = "606060"
-let s:gui03 = "808080"
-let s:gui04 = "c0c0c0"
-let s:gui05 = "d0d0d0"
-let s:gui06 = "e0e0e0"
-let s:gui07 = "ffffff"
-let s:gui08 = "ff0000"
-let s:gui09 = "ff9900"
-let s:gui0A = "ff0099"
-let s:gui0B = "33ff00"
-let s:gui0C = "00ffff"
-let s:gui0D = "0066ff"
-let s:gui0E = "cc00ff"
-let s:gui0F = "3300ff"
+let s:gui00 = "16130F"
+let s:gui01 = "2C2620"
+let s:gui02 = "433B32"
+let s:gui03 = "5A5047"
+let s:gui04 = "8A8075"
+let s:gui05 = "A39A90"
+let s:gui06 = "BEB6AE"
+let s:gui07 = "DBD6D1"
+let s:gui08 = "826D57"
+let s:gui09 = "828257"
+let s:gui0A = "6D8257"
+let s:gui0B = "57826D"
+let s:gui0C = "576D82"
+let s:gui0D = "6D5782"
+let s:gui0E = "82576D"
+let s:gui0F = "825757"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -49,7 +49,7 @@ endif
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-isotope"
+let g:colors_name = "base16-embers"
 
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr)
