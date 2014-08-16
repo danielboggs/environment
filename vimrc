@@ -12,7 +12,6 @@ call vundle#rc()
 
 " Vim bundles
 Bundle 'airblade/vim-gitgutter'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'austintaylor/vim-indentobject'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'gmarik/vundle'
@@ -48,7 +47,6 @@ Bundle 'vim-scripts/Align'
 Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'mattn/emmet-vim'
-" Bundle 'bling/vim-airline'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'craigemery/vim-autotag'
 
