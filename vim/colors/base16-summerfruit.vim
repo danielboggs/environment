@@ -1,5 +1,5 @@
-" Base16 Atelier Seaside (https://github.com/chriskempson/base16)
-" Scheme: Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/seaside/)
+" Base16 Summerfruit (https://github.com/chriskempson/base16)
+" Scheme: Christopher Corley (http://cscorley.github.io/)
 
 " This enables the coresponding base16-shell script to run so that
 " :colorscheme works in terminals supported by base16-shell scripts
@@ -7,27 +7,27 @@
 "   let g:base16_shell_path=base16-builder/output/shell/
 if !has('gui')
   if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-atelierseaside.dark.sh"
+    execute "silent !/bin/sh ".g:base16_shell_path."/base16-summerfruit.dark.sh"
   endif
 endif
 
 " GUI color definitions
-let s:gui00 = "131513"
-let s:gui01 = "242924"
-let s:gui02 = "5e6e5e"
-let s:gui03 = "687d68"
-let s:gui04 = "809980"
-let s:gui05 = "8ca68c"
-let s:gui06 = "cfe8cf"
-let s:gui07 = "f0fff0"
-let s:gui08 = "e6193c"
-let s:gui09 = "87711d"
-let s:gui0A = "c3c322"
-let s:gui0B = "29a329"
-let s:gui0C = "1999b3"
-let s:gui0D = "3d62f5"
-let s:gui0E = "ad2bee"
-let s:gui0F = "e619c3"
+let s:gui00 = "151515"
+let s:gui01 = "202020"
+let s:gui02 = "303030"
+let s:gui03 = "505050"
+let s:gui04 = "B0B0B0"
+let s:gui05 = "D0D0D0"
+let s:gui06 = "E0E0E0"
+let s:gui07 = "FFFFFF"
+let s:gui08 = "FF0086"
+let s:gui09 = "FD8900"
+let s:gui0A = "ABA800"
+let s:gui0B = "00C918"
+let s:gui0C = "1faaaa"
+let s:gui0D = "3777E6"
+let s:gui0E = "AD00A1"
+let s:gui0F = "cc6633"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -59,7 +59,7 @@ endif
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-atelierseaside"
+let g:colors_name = "base16-summerfruit"
 
 " Highlighting function
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr)

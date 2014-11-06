@@ -1,23 +1,33 @@
 " Base16 Default (https://github.com/chriskempson/base16)
 " Scheme: Chris Kempson (http://chriskempson.com)
 
+" This enables the coresponding base16-shell script to run so that
+" :colorscheme works in terminals supported by base16-shell scripts
+" User must set this variable in .vimrc
+"   let g:base16_shell_path=base16-builder/output/shell/
+if !has('gui')
+  if exists("g:base16_shell_path")
+    execute "silent !/bin/sh ".g:base16_shell_path."/base16-default.dark.sh"
+  endif
+endif
+
 " GUI color definitions
-let s:gui00 = "151515"
-let s:gui01 = "202020"
-let s:gui02 = "303030"
-let s:gui03 = "505050"
-let s:gui04 = "b0b0b0"
-let s:gui05 = "d0d0d0"
-let s:gui06 = "e0e0e0"
-let s:gui07 = "f5f5f5"
-let s:gui08 = "ac4142"
-let s:gui09 = "d28445"
-let s:gui0A = "f4bf75"
-let s:gui0B = "90a959"
-let s:gui0C = "75b5aa"
-let s:gui0D = "6a9fb5"
-let s:gui0E = "aa759f"
-let s:gui0F = "8f5536"
+let s:gui00 = "181818"
+let s:gui01 = "282828"
+let s:gui02 = "383838"
+let s:gui03 = "585858"
+let s:gui04 = "b8b8b8"
+let s:gui05 = "d8d8d8"
+let s:gui06 = "e8e8e8"
+let s:gui07 = "f8f8f8"
+let s:gui08 = "ab4642"
+let s:gui09 = "dc9656"
+let s:gui0A = "f7ca88"
+let s:gui0B = "a1b56c"
+let s:gui0C = "86c1b9"
+let s:gui0D = "7cafc2"
+let s:gui0E = "ba8baf"
+let s:gui0F = "a16946"
 
 " Terminal color definitions
 let s:cterm00 = "00"
@@ -138,7 +148,7 @@ call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "")
 call <sid>hi("MatchParen",    s:gui00, s:gui03, s:cterm00, s:cterm03,  "")
 call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "")
 call <sid>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "")
-call <sid>hi("Question",      s:gui09, "", s:cterm09, "", "")
+call <sid>hi("Question",      s:gui0D, "", s:cterm0D, "", "")
 call <sid>hi("Search",        s:gui03, s:gui0A, s:cterm03, s:cterm0A,  "")
 call <sid>hi("SpecialKey",    s:gui03, "", s:cterm03, "", "")
 call <sid>hi("TooLong",       s:gui08, "", s:cterm08, "", "")
