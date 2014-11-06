@@ -12,39 +12,22 @@ call vundle#rc()
 
 " Vim bundles
 Bundle 'airblade/vim-gitgutter'
-Bundle 'austintaylor/vim-indentobject'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'gmarik/vundle'
-Bundle 'juvenn/mustache.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'majutsushi/tagbar'
 Bundle 'rking/ag.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'nono/vim-handlebars'
 Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'slim-template/vim-slim'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-pastie'
-Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'eventualbuddha/vim-protobuf'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/Align'
 Bundle 'vim-scripts/greplace.vim'
-Bundle 'vim-scripts/matchit.zip'
 Bundle 'mattn/emmet-vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'craigemery/vim-autotag'
@@ -96,12 +79,13 @@ nmap <leader>d :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
 nmap <leader>t :CtrlP<CR>
 nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
-nmap <leader>] :TagbarToggle<CR>
+" nmap <leader>] :TagbarToggle<CR>
 nmap <leader><space> :call whitespace#strip_trailing()<CR>
 nmap <leader>g :GitGutterToggle<CR>
 nmap <leader>c <Plug>Kwbd
 nmap <leader>r :redraw!<CR>
 nmap <leader>rt :set tabstop=2<CR>:retab<CR>
+nmap <leader>s :sort<CR>
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " in case you forgot to sudo
@@ -110,7 +94,7 @@ cmap w!! %!sudo tee > /dev/null %
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:NERDSpaceDelims=1
-let g:gitgutter_enabled = 0
+" let g:gitgutter_enabled = 1
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -170,31 +154,3 @@ set splitbelow
 set splitright
 " only use current file and ctags for completion
 set complete=.,t
-" set airline theme
-let g:airline_theme = 'base16'
-" set airline symbols
-let g:airline_symbols = {}
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-
-
-" Disambiguate ,a & ,t from the Align plugin, making them fast again.
-"
-" This section is here to prevent AlignMaps from adding a bunch of mappings
-" that interfere with the very-common ,a and ,t mappings. This will get run
-" at every startup to remove the AlignMaps for the *next* vim startup.
-"
-" If you do want the AlignMaps mappings, remove this section, remove
-" ~/.vim/bundle/Align, and re-run rake in maximum-awesome.
-function! s:RemoveConflictingAlignMaps()
-  if exists("g:loaded_AlignMapsPlugin")
-    AlignMapsClean
-  endif
-endfunction
-command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
-silent! autocmd VimEnter * RemoveConflictingAlignMaps
