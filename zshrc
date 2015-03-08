@@ -21,9 +21,9 @@ export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/Applicat
 # set homebrew cask app symlink directory
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# Activate rbenv
-export RBENV_ROOT="/usr/local/var/rbenv"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# Activate chruby and the .ruby-version auto-switcher
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # set vim as the default editor
 export EDITOR=vim
@@ -65,4 +65,5 @@ alias :q="exit"
 alias :bd="exit"
 alias base="tmux attach -t base || tmux new -s base"
 
-source ~/.aliases
+source ~/.zsh_project_aliases
+source ~/.zsh_functions

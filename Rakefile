@@ -209,7 +209,8 @@ LINKED_FILES = filemap(
   'vimrc'               => '~/.vimrc',
   'gemrc'               => '~/.gemrc',
   'gvimrc'              => '~/.gvimrc',
-  'zshrc'               => '~/.zshrc'
+  'zshrc'               => '~/.zshrc',
+  'zsh_functions'       => '~/.zsh_functions'
 )
 
 desc 'Install these config files.'
