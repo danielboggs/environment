@@ -205,6 +205,8 @@ end
 
 LINKED_FILES = filemap(
   'vim'                 => '~/.vim',
+  'agignore'            => '~/.agignore',
+  'gitignore'           => '~/.gitignore',
   'tmux.conf'           => '~/.tmux.conf',
   'vimrc'               => '~/.vimrc',
   'gemrc'               => '~/.gemrc',

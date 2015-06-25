@@ -31,6 +31,12 @@ Bundle 'vim-scripts/greplace.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'craigemery/vim-autotag'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
+Bundle "junegunn/vim-emoji"
+Bundle "elixir-lang/vim-elixir"
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
@@ -56,7 +62,7 @@ set showcmd
 set smartcase                                                " case-sensitive search if any caps
 set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
 set tabstop=8                                                " actual tabs occupy 8 characters
-set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
+set wildignore+=log/**,node_modules/**,target/**,tmp/**,*.rbc,*/tmp/*
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
 
@@ -85,6 +91,7 @@ nmap <leader>c <Plug>Kwbd
 nmap <leader>r :redraw!<CR>
 nmap <leader>rt :set tabstop=2<CR>:retab<CR>
 nmap <leader>s :sort<CR>
+nmap <leader>em :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " in case you forgot to sudo
@@ -153,3 +160,13 @@ set splitbelow
 set splitright
 " only use current file and ctags for completion
 set complete=.,t
+" custom snippets
+let g:snippets_dir = "~/.vim/snippets"
+
+" Git gutter emoji
+silent! if emoji#available()
+  let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+  let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+  let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
+  let g:gitgutter_sign_modified_removed = emoji#for('collision')
+endif

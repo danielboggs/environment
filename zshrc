@@ -16,7 +16,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/Applications/Postgres.app/Contents/Versions/9.3/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 
 # set homebrew cask app symlink directory
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -61,9 +61,14 @@ function extract () {
   fi
 }
 
+# exit all the things
 alias :q="exit"
 alias :bd="exit"
+
+# generic tmux session
 alias base="tmux attach -t base || tmux new -s base"
 
 source ~/.zsh_project_aliases
 source ~/.zsh_functions
+
+source /Users/daniel/.iterm2_shell_integration.zsh
