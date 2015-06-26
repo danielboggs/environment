@@ -70,5 +70,3 @@ alias base="tmux attach -t base || tmux new -s base"
 
 source ~/.zsh_project_aliases
 source ~/.zsh_functions
-
-source /Users/daniel/.iterm2_shell_integration.zsh
