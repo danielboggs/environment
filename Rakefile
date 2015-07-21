@@ -204,15 +204,16 @@ def filemap(map)
 end
 
 LINKED_FILES = filemap(
-  'vim'                 => '~/.vim',
   'agignore'            => '~/.agignore',
-  'gitignore'           => '~/.gitignore',
-  'tmux.conf'           => '~/.tmux.conf',
-  'vimrc'               => '~/.vimrc',
   'gemrc'               => '~/.gemrc',
+  'gitignore'           => '~/.gitignore',
   'gvimrc'              => '~/.gvimrc',
-  'zshrc'               => '~/.zshrc',
-  'zsh_functions'       => '~/.zsh_functions'
+  'hushlogin'           => '~/.hushlogin',
+  'tmux.conf'           => '~/.tmux.conf',
+  'vim'                 => '~/.vim',
+  'vimrc'               => '~/.vimrc',
+  'zsh_functions'       => '~/.zsh_functions',
+  'zshrc'               => '~/.zshrc'
 )
 
 desc 'Install these config files.'
