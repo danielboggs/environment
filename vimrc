@@ -12,14 +12,23 @@ call vundle#rc()
 
 " Vim bundles
 Bundle 'airblade/vim-gitgutter'
+Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'craigemery/vim-autotag'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'garbas/vim-snipmate'
 Bundle 'gmarik/vundle'
+Bundle 'honza/vim-snippets'
+Bundle 'junegunn/vim-emoji'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
-Bundle 'rking/ag.vim'
+Bundle 'marcweber/vim-addon-mw-utils'
+Bundle 'mattn/emmet-vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
@@ -28,15 +37,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/greplace.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'craigemery/vim-autotag'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
-Bundle "junegunn/vim-emoji"
-Bundle "elixir-lang/vim-elixir"
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
