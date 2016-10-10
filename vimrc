@@ -1,42 +1,53 @@
 " don't bother with vi compatibility
 set nocompatible
 
+" base16 colorscheme
+colorscheme base16-default
+
 " enable syntax highlighting
 syntax enable
 
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " Vim bundles
-Bundle 'airblade/vim-gitgutter'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'craigemery/vim-autotag'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'garbas/vim-snipmate'
-Bundle 'gmarik/vundle'
-Bundle 'honza/vim-snippets'
-Bundle 'junegunn/vim-emoji'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'marcweber/vim-addon-mw-utils'
-Bundle 'mattn/emmet-vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'tomtom/tlib_vim'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/greplace.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'craigemery/vim-autotag'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'garbas/vim-snipmate'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'honza/vim-snippets'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'marcweber/vim-addon-mw-utils'
+Plugin 'mattn/emmet-vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tlib_vim'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-pastie'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/greplace.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'evidens/vim-twig'
+Plugin 'dsawardekar/wordpress'
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
@@ -61,10 +72,17 @@ set shiftwidth=2                                             " normal mode inden
 set showcmd
 set smartcase                                                " case-sensitive search if any caps
 set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
-set tabstop=8                                                " actual tabs occupy 8 characters
+set tabstop=2                                                " actual tabs occupy 8 characters
 set wildignore+=log/**,node_modules/**,target/**,tmp/**,*.rbc,*/tmp/*
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
+set background=dark                                          " background
+set hlsearch                                                 " highlight search
+set nowrap                                                   " dont wrap lines
+set shortmess+=I                                             " hide splash screen
+set splitbelow                                               " Horizontal splits open below
+set splitright                                               " Vertical splits open to the right
+set complete=.,t                                             " only use current file and ctags for completion
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
@@ -74,33 +92,35 @@ endif
 
 " keyboard shortcuts
 let mapleader = ','
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-map <leader>l :Align
-nmap <leader>a :Ag<space>
-nmap <leader>b :CtrlPBuffer<CR>
-nmap <leader>d :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
-nmap <leader>t :CtrlP<CR>
-nmap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
-nmap <leader><space> :call whitespace#strip_trailing()<CR>
-nmap <leader>g :GitGutterToggle<CR>
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+nnoremap <leader>a :Ag<space>
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+nnoremap <leader>] :TagbarToggle<CR>
+nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
+nnoremap <leader>g :GitGutterToggle<CR>
+noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+nmap <leader>rt :set tabstop=2<CR> :set shiftwidth=2<CR> :retab<CR>
+nmap <leader>hl :let @/ = ""<CR>
 nmap <leader>c <Plug>Kwbd
 nmap <leader>r :redraw!<CR>
-nmap <leader>rt :set tabstop=2<CR>:retab<CR>
-nmap <leader>s :sort<CR>
-nmap <leader>em :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " in case you forgot to sudo
-cmap w!! %!sudo tee > /dev/null %
+cnoremap w!! %!sudo tee > /dev/null %
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
-let g:NERDSpaceDelims=1
-" let g:gitgutter_enabled = 1
+let g:NERDSpaceDelims = 1
+let g:gitgutter_enabled = 0
+let NERDTreeShowHidden=1 " show hidden files in NERDTree
+let g:snippets_dir = "~/.vim/snippets" " custom snippets
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -135,38 +155,5 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-
-" base16 colorscheme
-colorscheme base16-default
-" background
-set background=dark
-" show hidden files in NERDTree
-let NERDTreeShowHidden=1
-" enable gitgutter at launch
-let g:gitgutter_enabled = 1
-" highlight search
-set hlsearch
-" dont wrap lines
-set nowrap
-" hide splash screen
-set shortmess+=I
-" custom timeout length
-set timeout timeoutlen=1000 ttimeoutlen=50
-" ,hl to clear search highlights
-nmap <leader>hl :let @/ = ""<CR>
-" Horizontal splits open below
-set splitbelow
-" Vertical splits open to the right
-set splitright
-" only use current file and ctags for completion
-set complete=.,t
-" custom snippets
-let g:snippets_dir = "~/.vim/snippets"
-
-" Git gutter emoji
-silent! if emoji#available()
-  let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
-  let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
-  let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
-  let g:gitgutter_sign_modified_removed = emoji#for('collision')
-endif
+" Don't copy the contents of an overwritten selection.
+vnoremap p "_dP

@@ -1,4 +1,4 @@
-colorscheme base16-eighties
+colorscheme spacedust
 
 set background=dark
 set guifont=Source\ Code\ Pro:h12
