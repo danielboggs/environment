@@ -2,7 +2,7 @@
 set nocompatible
 
 " base16 colorscheme
-colorscheme base16-default
+colorscheme base16-default-dark
 
 " enable syntax highlighting
 syntax enable
@@ -111,6 +111,8 @@ nmap <leader>rt :set tabstop=2<CR> :set shiftwidth=2<CR> :retab<CR>
 nmap <leader>hl :let @/ = ""<CR>
 nmap <leader>c <Plug>Kwbd
 nmap <leader>r :redraw!<CR>
+
+imap fd <Esc>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %

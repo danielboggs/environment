@@ -1,5 +1,3 @@
-colorscheme spacedust
-
 set background=dark
 set guifont=Source\ Code\ Pro:h12
 set guioptions-=T

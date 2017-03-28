@@ -20,7 +20,7 @@ HOME_PATH=~/bin
 COMPOSER_PATH=~/.composer/vendor/bin
 HOMEBREW_PATH=/usr/local/bin:/usr/local/sbin
 HEROKU_TOOLBELT_PATH=/usr/local/heroku/bin
-POSTGRES_APP_PATH=/Applications/Postgres.app/Contents/Versions/9.5/bin
+POSTGRES_APP_PATH=/Applications/Postgres.app/Contents/Versions/latest/bin
 SYSTEM_PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 export PATH=$HOME_PATH:$COMPOSER_PATH:$HOMEBREW_PATH:$HEROKU_TOOLBELT_PATH:$POSTGRES_APP_PATH:$SYSTEM_PATH:$PATH
