@@ -4,7 +4,7 @@ This repo was originally forked from [https://github.com/square/maximum-awesome]
 
 ## What's in it?
 
-* [MacVim](https://code.google.com/p/macvim/) (independent or for use in a terminal)
+* Vim
 * [tmux](http://tmux.sourceforge.net/)
 * Want to know more? [Fly Vim, First Class](http://corner.squareup.com/2013/08/fly-vim-first-class.html)
 

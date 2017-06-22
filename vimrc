@@ -2,7 +2,7 @@
 set nocompatible
 
 " base16 colorscheme
-colorscheme base16-default-dark
+colorscheme base16-onedark
 
 " enable syntax highlighting
 syntax enable
@@ -14,15 +14,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " Vim bundles
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'craigemery/vim-autotag'
-Plugin 'elixir-lang/vim-elixir'
+" Plugin 'elixir-lang/vim-elixir'
 Plugin 'garbas/vim-snipmate'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'honza/vim-snippets'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'mattn/emmet-vim'
@@ -31,13 +30,10 @@ Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-pastie'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
@@ -46,8 +42,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/greplace.vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'evidens/vim-twig'
-Plugin 'dsawardekar/wordpress'
+Plugin 'mxw/vim-jsx'
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
@@ -66,16 +61,18 @@ set laststatus=2                                             " always show statu
 set list                                                     " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
 set number                                                   " show line numbers
-set ruler                                                    " show where you are
+" set ruler                                                    " show where you are
 set scrolloff=3                                              " show context above/below cursorline
 set shiftwidth=2                                             " normal mode indentation commands use 2 spaces
 set showcmd
 set smartcase                                                " case-sensitive search if any caps
 set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
 set tabstop=2                                                " actual tabs occupy 8 characters
-set wildignore+=log/**,node_modules/**,target/**,tmp/**,*.rbc,*/tmp/*
+set wildignore+=log/**,node_modules/**,target/**,tmp/**
+set wildignore+=*.rbc,*/tmp/*,*.bmp,*.gif,*.doc,*.docx
+set wildignore+=*.ico,*.jpg,*.png,*.pdf,*.psd
 set wildmenu                                                 " show a navigable menu for tab completion
-set wildmode=longest,list,full
+set wildmode=list:longest,full
 set background=dark                                          " background
 set hlsearch                                                 " highlight search
 set nowrap                                                   " dont wrap lines
@@ -102,26 +99,22 @@ nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
-nnoremap <leader>] :TagbarToggle<CR>
+" nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
-nnoremap <leader>g :GitGutterToggle<CR>
+" nnoremap <leader>g :GitGutterToggle<CR>
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 nmap <leader>rt :set tabstop=2<CR> :set shiftwidth=2<CR> :retab<CR>
 nmap <leader>hl :let @/ = ""<CR>
-nmap <leader>c <Plug>Kwbd
 nmap <leader>r :redraw!<CR>
-
-imap fd <Esc>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
 
-" plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:NERDSpaceDelims = 1
-let g:gitgutter_enabled = 0
 let NERDTreeShowHidden=1 " show hidden files in NERDTree
+" let g:gitgutter_enabled = 0
 let g:snippets_dir = "~/.vim/snippets" " custom snippets
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher

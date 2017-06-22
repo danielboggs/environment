@@ -67,3 +67,5 @@ source ~/.zsh_project_aliases
 source ~/.zsh_functions
 
 source /usr/local/share/zsh/site-functions/_aws
+
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
