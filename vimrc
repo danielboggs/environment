@@ -17,32 +17,35 @@ call vundle#rc()
 " Plugin 'airblade/vim-gitgutter'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'craigemery/vim-autotag'
-" Plugin 'elixir-lang/vim-elixir'
-Plugin 'garbas/vim-snipmate'
+" Plugin 'craigemery/vim-autotag'
+Plugin 'elixir-lang/vim-elixir'
+" Plugin 'garbas/vim-snipmate'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
-Plugin 'marcweber/vim-addon-mw-utils'
+" Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'mattn/emmet-vim'
-Plugin 'pangloss/vim-javascript'
+" Plugin 'pangloss/vim-javascript'
+Plugin 'othree/yajs.vim'
 Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
+" Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-ragtag'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/greplace.vim'
-Plugin 'editorconfig/editorconfig-vim'
+" Plugin 'editorconfig/editorconfig-vim'
+Plugin 'posva/vim-vue'
 Plugin 'mxw/vim-jsx'
+Plugin 'prettier/vim-prettier'
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
@@ -95,8 +98,8 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 nnoremap <leader>a :Ag<space>
 nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
+" nnoremap <leader>d :NERDTreeToggle<CR>
+" nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 " nnoremap <leader>] :TagbarToggle<CR>
@@ -112,8 +115,8 @@ nmap <leader>r :redraw!<CR>
 cnoremap w!! %!sudo tee > /dev/null %
 
 let g:ctrlp_match_window = 'order:ttb,max:20'
-let g:NERDSpaceDelims = 1
-let NERDTreeShowHidden=1 " show hidden files in NERDTree
+" let g:NERDSpaceDelims = 1
+" let NERDTreeShowHidden=1 " show hidden files in NERDTree
 " let g:gitgutter_enabled = 0
 let g:snippets_dir = "~/.vim/snippets" " custom snippets
 
@@ -132,12 +135,12 @@ autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.md set spell
 " extra rails.vim help
-autocmd User Rails silent! Rnavcommand decorator      app/decorators            -glob=**/* -suffix=_decorator.rb
-autocmd User Rails silent! Rnavcommand observer       app/observers             -glob=**/* -suffix=_observer.rb
-autocmd User Rails silent! Rnavcommand feature        features                  -glob=**/* -suffix=.feature
-autocmd User Rails silent! Rnavcommand job            app/jobs                  -glob=**/* -suffix=_job.rb
-autocmd User Rails silent! Rnavcommand mediator       app/mediators             -glob=**/* -suffix=_mediator.rb
-autocmd User Rails silent! Rnavcommand stepdefinition features/step_definitions -glob=**/* -suffix=_steps.rb
+" autocmd User Rails silent! Rnavcommand decorator      app/decorators            -glob=**/* -suffix=_decorator.rb
+" autocmd User Rails silent! Rnavcommand observer       app/observers             -glob=**/* -suffix=_observer.rb
+" autocmd User Rails silent! Rnavcommand feature        features                  -glob=**/* -suffix=.feature
+" autocmd User Rails silent! Rnavcommand job            app/jobs                  -glob=**/* -suffix=_job.rb
+" autocmd User Rails silent! Rnavcommand mediator       app/mediators             -glob=**/* -suffix=_mediator.rb
+" autocmd User Rails silent! Rnavcommand stepdefinition features/step_definitions -glob=**/* -suffix=_steps.rb
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 

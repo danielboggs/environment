@@ -159,7 +159,7 @@ namespace :install do
   task :vundle do
     step 'vundle'
     install_github_bundle 'gmarik','vundle'
-    sh '~/bin/vim -c "BundleInstall" -c "q" -c "q"'
+    sh 'vim -c "BundleInstall" -c "q" -c "q"'
   end
 end
 
@@ -186,12 +186,10 @@ LINKED_FILES = filemap(
 desc 'Install these config files.'
 task :install do
   Rake::Task['install:brew'].invoke
-  Rake::Task['install:brew_cask'].invoke
   Rake::Task['install:the_silver_searcher'].invoke
   Rake::Task['install:ctags'].invoke
   Rake::Task['install:reattach_to_user_namespace'].invoke
   Rake::Task['install:tmux'].invoke
-  Rake::Task['install:macvim'].invoke
 
   # TODO install gem ctags?
   # TODO run gem ctags?
